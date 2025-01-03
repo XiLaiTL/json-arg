@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "json-arg"
+version = "0.1.0"
+description = "Load json as args and save args to json. Convert arg parser to json-schema and convert json-schema to arg parser"
+authors = ["XiLaiTL <xilaitl@qq.com>"]
+readme = "README.md"
+package-mode = true
+license = "MIT"
+keywords = ["json", "schema", "argparse", "jsonschema", "parser","parse","arg"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+
+[tool.poetry.scripts]
+check_schema = 'json_argparse.argparse_schema.argparse_schema:main'
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
