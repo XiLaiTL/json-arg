@@ -43,14 +43,14 @@ json_schema: dict = {}
 json_argparser = Parser(schema=json_schema)
 
 # Or from a path
-json_schema_path = "./config.json"
+json_schema_path = "./schema_config.json"
 json_argparser = Parser(schema=json_schema_path)
 ```
 
 Add json-schema to existed parser
 
 ```python
-json_schema_path = "./config.json"
+json_schema_path = "./schema_config.json"
 json_argparser.add_json_schema(schema = json_schema_path)
 ```
 
@@ -69,7 +69,7 @@ args = json_argparser.parse_args()
 Using in commandline is like below.
 
 ```shell
-python main.py --json-load ./config.json
+python main.py --json-load ./run_config.json
 ```
 
 ### Save args to json
@@ -85,10 +85,10 @@ Using in commandline, you just add the `--json-save /path/file.json` after the c
 Otherwise, if you just add `--json-save`, it will be saved in `./run_config.json`.
 
 ```shell
-python main.py --other argument --json-save ./config.json
+python main.py --other argument --json-save ./run_config.json
 ```
 
-Then you will find the json file in `config.json`
+Then you will find the json file in `run_config.json`
 
 ```json
 {
@@ -116,8 +116,19 @@ json_args = json_argparser.save_json_schema()
 Save as json-schema file.
 
 ```python
-json_argparser.save_json_schema("./file.json")
+json_argparser.save_json_schema("./schema_config.json")
 ```
+
+### Check schema on commandline 
+
+After installed, you can check your schema file using `check_schema` script.
+
+```shell
+check_schema -h
+check_schema ./schema_config.json
+```
+
+
 ## TODO List:
 
 - [x] The test of argparse-to-schema and schema-to-argparse
