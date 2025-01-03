@@ -21,7 +21,7 @@ classifiers = [
 python = "^3.8"
 
 [tool.poetry.scripts]
-check_schema = 'json_argparse.argparse_schema.argparse_schema:main'
+check_schema = 'json_arg.argparse_schema.argparse_schema:main'
 
 [build-system]
 requires = ["poetry-core"]
